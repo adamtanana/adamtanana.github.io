@@ -1,7 +1,7 @@
 ---
 layout: page
 title: whoami
-permalink: /whoami/
+permalink: /me/
 ---
 
 hi i'm adam
