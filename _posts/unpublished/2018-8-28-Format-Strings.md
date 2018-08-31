@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Format Strings!
+author: adamt
 ---
 
 Let's learn how printf works.
@@ -69,13 +70,14 @@ A good disassembler - Although this isn't really required, it is super useful to
 
 2) what is printf?
 --------------------------------------
+if you already have a basic understanding of intel x86 assembly and libc function calling conventions you can skip this section.
 ____________________________________________________________________
 
 before we have fun with breaking programs let's learn a bit of assembly. This post will mainly discuss 32 bit systems, but 64 bit systems are vulnerable to the exact same style of attack. Here I've compiled a simple C program that prints `Hello world\n100`
 
 ```C
 int main() {
-  printf("Hello World\n%d", 100);
+  printf("Hello World %d \n", 100);
 }
 ```
 
@@ -83,37 +85,61 @@ We can then disassemble the binary using objdump or binaryninja:
 
 ```
  0x8048426 <main>:
- 0x8048426: 8d 4c 24 04           lea    0x4(%esp),%ecx
- 0x804842a: 83 e4 f0              and    $0xfffffff0,%esp
- 0x804842d: ff 71 fc              pushl  -0x4(%ecx)
- 0x8048430: 55                    push   %ebp
- 0x8048431: 89 e5                 mov    %esp,%ebp
- 0x8048433: 53                    push   %ebx
- 0x8048434: 51                    push   %ecx
+ 0x8048426: 8d 4c 24 04           lea    ecx,[esp+0x4]
+ 0x804842a: 83 e4 f0              and    esp,0xfffffff0
+ 0x804842d: ff 71 fc              push   DWORD PTR [ecx-0x4]
+ 0x8048430: 55                    push   ebp
+ 0x8048431: 89 e5                 mov    ebp,esp
+ 0x8048433: 53                    push   ebx
+ 0x8048434: 51                    push   ecx
  0x8048435: e8 2a 00 00 00        call   0x8048464 <__x86.get_pc_thunk.ax>
- 0x804843a: 05 c6 1b 00 00        add    $0x1bc6,%eax
- 0x804843f: 83 ec 08              sub    $0x8,%esp
- 0x8048442: 6a 64                 push   $0x64
- 0x8048444: 8d 90 f0 e4 ff ff     lea    -0x1b10(%eax),%edx
- 0x804844a: 52                    push   %edx
- 0x804844b: 89 c3                 mov    %eax,%ebx
+ 0x804843a: 05 c6 1b 00 00        add    eax,0x1bc6
+ 0x804843f: 83 ec 08              sub    esp,0x8
+ 0x8048442: 6a 64                 push   0x64
+ 0x8048444: 8d 90 f0 e4 ff ff     lea    edx,[eax-0x1b10] {"Hello World %d\n"}
+ 0x804844a: 52                    push   edx
+ 0x804844b: 89 c3                 mov    ebx,eax
  0x804844d: e8 8e fe ff ff        call   0x80482e0 <printf@plt>
- 0x8048452: 83 c4 10              add    $0x10,%esp
- 0x8048455: b8 00 00 00 00        mov    $0x0,%eax
- 0x804845a: 8d 65 f8              lea    -0x8(%ebp),%esp
- 0x804845d: 59                    pop    %ecx
- 0x804845e: 5b                    pop    %ebx
- 0x804845f: 5d                    pop    %ebp
- 0x8048460: 8d 61 fc              lea    -0x4(%ecx),%esp
+ 0x8048452: 83 c4 10              add    esp,0x10
+ 0x8048455: b8 00 00 00 00        mov    eax,0x0
+ 0x804845a: 8d 65 f8              lea    esp,[ebp-0x8]
+ 0x804845d: 59                    pop    ecx
+ 0x804845e: 5b                    pop    ebx
+ 0x804845f: 5d                    pop    ebp
+ 0x8048460: 8d 61 fc              lea    esp,[ecx-0x4]
  0x8048463: c3                    ret  
 ``` 
 
+We can break this down into 3 main parts. <br />
+\> Function prologue <br />
+\> Printf call <br />
+\> Function epiloge <br />
+
+The function prologue essentially initiates a stack frame for our function to store any local variables it requires. Understanding what each command is doing isn't really important at this point, but understanding the big picture is important.
+
+```
+ 0x8048426 <main>:
+ 0x8048426: 8d 4c 24 04           lea    ecx,[esp+0x4]
+ 0x804842a: 83 e4 f0              and    esp,0xfffffff0
+ 0x804842d: ff 71 fc              push   DWORD PTR [ecx-0x4]
+ 0x8048430: 55                    push   ebp
+ 0x8048431: 89 e5                 mov    ebp,esp
+ 0x8048433: 53                    push   ebx
+ 0x8048434: 51                    push   ecx
+ 0x8048435: e8 2a 00 00 00        call   0x8048464 <__x86.get_pc_thunk.ax>
+ 0x804843a: 05 c6 1b 00 00        add    eax,0x1bc6
+ 0x804843f: 83 ec 08              sub    esp,0x8
+ ```
+The first thing this function does is (`and esp, 0xfffffff0`) align the stack to the nearest byte boundary. It then follows by setting up the new stack frame by moving around ebp and esp. This essentially sets up the new stack frame, setting the `EBP` register as the lower boundary of our stackframe and `ESP` as the higher boundary.
+`EBP` is usually constant throughout the function, and so if the function wants to add another variable it can move the `ESP` register. 
+
+This function requires 8 bytes of stack space, So it subtracts 8 bytes from esp. Essentially allowing the storage of two 32 bit(4 byte) ints to be stored on the stack
 
 
 
 
+### C/x86 Calling conventions
 
- 
 
 3) leaking memory
 --------------------------------------
