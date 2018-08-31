@@ -1,7 +1,7 @@
 ---
 layout: page
-title: flag
-permalink: /flag/
+title: cyb3r
+permalink: /cyber/
 ---
 
 ```python
