@@ -14,13 +14,11 @@ enjoy the flag `flag{1s_thi5_th3_n3w_stuxn3t_0r_jus7_4_w4r_g4m3}`
 The challenge was a twist on the well known stuxnet virus. It contained 6 sections that built on each other and was a generally fun and interesting challenge.
 
 ## Step 1
-Execute the default firmware
---------------
+### Execute the default firmware
 By looking at the provide source code we can see that by entering `E` the program will execute the currently loaded firmware
         
 ## Step 2
-Create our own custom checksummed firmware
-----------------
+### Create our own custom checksummed firmware
 This was one of the harder/longer parts of the challenge. To solve this you had to reverse engineer both the custom `shellcode` used by the centrifuge system, and understand what each command does, as well as reverse engineer the checksum algorithm to digitally sign our own payloads.
 
 Through spending hours stairing at the debugger and following the code flows of different inputs we managed to discover the following commands the firmware would accept
@@ -44,13 +42,11 @@ Also a firmware must be 0x400 characters long and in the format of
 Where the version is 2 numbers (eg 12)
 
 ## Step 3
-Exceed Normal Centrifuge Speeds
-----------------
+### Exceed Normal Centrifuge Speeds
 With the knowledge gained from above, to spin the centrifuges to destruction, we enabled the RPM override, and then calling Increment RPM until the RPM was over a certain threshold. This was pretty trivial with our knowledge gained from the previous step.
 
 ## Step 4
-Specify some "extra" dangerous materials
------------------
+### Specify some "extra" dangerous materials
 This part of the challenge stumped me for over an hour, I didn't know what it meant by `"extra" dangerous materials`.
 Using the knowledge from above we could rename the materials used in the centrifuge by converting a string "HELLO" > "2H2E2L2L2O". Simplying putting the digit 2 between each char.
 We tried renaming the material to all sorts of things (yes i did google `most dangerous nuclear material` and other interesting items and yes I'm definetely on a watchlist somewhere)
@@ -66,8 +62,7 @@ nuff said, specify a string with like 100 character length and we get the points
 
 
 ## Step 5
-JK lol get flag and cat shell
--------------------------------
+### JK lol get flag and cat shell
 This is the part where it all stopped. <br />
 We had to put everything we had just learnt about this program, and try to somehow get shell.<br />
 
