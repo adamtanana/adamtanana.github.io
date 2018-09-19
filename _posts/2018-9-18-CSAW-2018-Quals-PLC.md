@@ -1,11 +1,8 @@
 ---
 layout: post
-title: CSAW Quals 2018!
+title: CSAW Quals 2018 | PLC Writeup
 author: adamt
 ---
-
-PLC Challenge Writeup
--------------------------------------------------------------
 
 What a challenge this was.
 Our team collectively spent over 40 hours solving it, however unfortunately we couldn't solve it until after the CTF had ended ;(
