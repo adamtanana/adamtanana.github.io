@@ -76,7 +76,7 @@ The two buffers we control are
 * The original terminal which has a 32 character size
 * The name buffer we control with our command inputs
 
-We can also get a leak because write after our name buffer, is a pointer to an address in libc. So if we fill our buffer with printable characters, we can print out the status/name of our centrifuge, and get an address leak. <br />
+We can also get a leak because right after our name buffer, is a pointer to an address in libc. So if we fill our buffer with printable characters, we can print out the status/name of our centrifuge, and get an address leak. <br />
 
 With a libc leak the rop chain is trivial
 
