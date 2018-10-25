@@ -6,7 +6,7 @@ permalink: /me/
 
 hi i'm adam
 
-Studying Bachelor of Computer Science full time at UNSW 
+study comp sci at UNSW 
 <br />
 enjoy hacking stuff for fun
 
