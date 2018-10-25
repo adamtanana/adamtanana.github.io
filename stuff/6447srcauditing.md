@@ -1,5 +1,6 @@
 gcc gave me like 30 warnings so enjoy
-
+<br />
+msg me to check ur answer of what bugs @adamt
 
 ```c
 #include <stdio.h>
