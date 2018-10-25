@@ -9,7 +9,7 @@ show_downloads: false
 
 defaults:
   - scope:
-      path: 'stuff/'
+      path: 'stuff/*'
     values:
       sitemap: false
 

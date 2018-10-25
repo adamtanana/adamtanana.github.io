@@ -1,1 +1,22 @@
-literally nothing
+### if you want the source to compare hmu on slack `@adamt`
+
+
+first chal
+---------------------
+
+![easy](../statuc/6447rev/easy1_ida.png)
+
+<br />
+
+second first chal
+------------------
+
+![easy](../statuc/6447rev/medium1_ida.png)
+
+<br />
+
+
+third chal
+----------------------
+
+![easy](../statuc/6447rev/easy1_ida.png)
