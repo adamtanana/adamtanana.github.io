@@ -1,5 +1,6 @@
 if you want the source to compare hmu on slack `@adamt`
-sorry that the first chal is messed up the compiler did random shit... (skip it if hard)
+<br />
+sorry that the first chal is messed up the compiler did random shit... (skip it is hard)
 
 first chal
 ---------------------
