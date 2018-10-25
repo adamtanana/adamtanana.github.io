@@ -20,4 +20,4 @@ second first chal
 third chal
 ----------------------
 
-![easy](../static/6447rev/easy1_ida.png)
+![easy](../static/6447rev/medium2_ida.png)
