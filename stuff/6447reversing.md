@@ -1,4 +1,4 @@
-if you want the source to compare hmu on slack `@adamt`
+If you want the source to compare hmu on slack `@adamt`
 <br />
 sorry that the first chal is messed up the compiler did random shit... (skip it is hard)
 
