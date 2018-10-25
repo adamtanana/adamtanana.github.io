@@ -1,7 +1,7 @@
 gcc gave me like 30 warnings so enjoy
 
 
-```C
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
