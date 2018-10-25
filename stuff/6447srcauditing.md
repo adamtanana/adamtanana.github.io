@@ -106,7 +106,7 @@ void create_humans(unsigned int number_of_humans) {
         scanf("%5s", age);
 
         char version[3];
-        scanf("%%s", version);
+        scanf("%5s", version);
 
         if(atoi(version) > 10) {
             exit(-1);
