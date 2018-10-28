@@ -7,17 +7,7 @@ first chal
 
 ![easy](../static/6447rev/easy1_ida.png)
 
-<details><summary>CLICK ME</summary>
-<p>
-
-#### yes, even hidden code blocks!
-
-```python
-print("hello world!")
-```
-
-</p>
-</details>
+[Solution](reversing1)
 
 <br />
 
@@ -26,6 +16,8 @@ second first chal
 
 ![easy](../static/6447rev/medium1_ida.png)
 
+[Solution](reversing2)
+
 <br />
 
 
@@ -33,3 +25,6 @@ third chal
 ----------------------
 
 ![easy](../static/6447rev/medium2_ida.png)
+
+[Solution](reversing3)
+
