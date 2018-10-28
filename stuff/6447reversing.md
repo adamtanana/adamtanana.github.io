@@ -7,9 +7,7 @@ first chal
 
 ![easy](../static/6447rev/easy1_ida.png)
 
-
-<details><summary>Challenge 1 Solution</summary>
-<p>
+<details><summary>Chall 1 Solution</summary>
 
 ```c
 int printEvenSum(int* a) {
@@ -23,7 +21,6 @@ int printEvenSum(int* a) {
 
 ```
 
-</p>
 </details>
 
 <br />
