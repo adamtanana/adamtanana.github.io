@@ -10,6 +10,7 @@ first chal
 
 <details><summary>Challenge 1 Solution</summary>
 <p>
+
 ```c
 int printEvenSum(int* a) {
     int sum = 0;
