@@ -6,5 +6,6 @@ int printEvenSum(int* a) {
             sum += a[i];
         }
     }
+    return sum;
 }
 ```
