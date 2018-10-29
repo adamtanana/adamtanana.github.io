@@ -27,3 +27,10 @@ third chal
 
 [Solution](reversing3/)
 
+
+fourth chal
+----------------------------------
+
+![noteasyfuckingrun](../static/6447rev/hard1_ida.png)
+
+[Solution](reversing4/)
