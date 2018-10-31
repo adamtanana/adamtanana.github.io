@@ -34,3 +34,11 @@ fourth chal
 ![noteasyfuckingrun](../static/6447rev/hard1_ida.png)
 
 [Solution](reversing4/)
+
+
+fiveth chal
+----------------------------------
+
+![noteasyfuckingrunagain](../static/6447rev/hard2_ida.png)
+
+[Solution](reversing5/)
