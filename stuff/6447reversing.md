@@ -42,3 +42,11 @@ fiveth chal
 ![noteasyfuckingrunagain](../static/6447rev/hard2_ida.png)
 
 [Solution](reversing5/)
+
+
+sixeth chal
+----------------------------------
+
+![noteasyfuckingrunagain](../static/6447rev/veryhard1_ida.png)
+
+[Solution](reversing6/)
