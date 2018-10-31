@@ -1,4 +1,4 @@
-```
+```c
 #include <stdio.h>
 
 int xor_array[100] = {0, 1, 2, 3}; // 2 lazy to do rest
