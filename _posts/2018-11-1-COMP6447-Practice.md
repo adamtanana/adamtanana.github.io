@@ -14,7 +14,7 @@ Reversing
 Exploitation
 --------------------------------
 
-[Exploitation Challenge](../stuff/6447exploiting/exploit1)
+[Exploitation Challenge](../stuff/6447exploit/exploit1)
 
 
 Source code Auditing
