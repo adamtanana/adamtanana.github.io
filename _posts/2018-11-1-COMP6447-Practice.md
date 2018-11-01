@@ -1,6 +1,6 @@
 ---
 layout: post
-title: COMP6447 Practice Reversing/Exploiting/Src code auditing
+title: COMP6447 Practice
 author: adamt
 ---
 
