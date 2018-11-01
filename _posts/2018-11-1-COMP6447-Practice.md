@@ -4,6 +4,8 @@ title: COMP6447 Practice Reversing/Exploiting/Src code auditing
 author: adamt
 ---
 
+woahhhh we have an exam on saturday i should probably study
+
 Reversing
 --------------------------------
 
