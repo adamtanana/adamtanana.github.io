@@ -4,9 +4,8 @@ title: whoami
 permalink: /me/
 ---
 
-hi i'm adam
 
-study comp sci at UNSW 
+Studying Computer Science & Adv Mathematics @ UNSW
 <br />
 enjoy hacking stuff for fun
 
