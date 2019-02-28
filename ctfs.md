@@ -1,10 +1,10 @@
 ---
 layout: page
-title: cyb3r
-permalink: /cyber/
+title: CTFs
+permalink: /ctfs/
 ---
 
-some ctfs i've played in recently
+Some ctfs I've played in recently.
 
 ```c
 CSAW 2018 - 3101 points  / 38th place
