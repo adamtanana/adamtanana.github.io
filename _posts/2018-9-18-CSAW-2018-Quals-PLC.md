@@ -4,11 +4,13 @@ title: CSAW Quals 2018 | PLC Writeup
 author: adamt
 ---
 
-What a challenge this was.
-Our team collectively spent over 40 hours solving it, however unfortunately we couldn't solve it until after the CTF had ended ;(
+CSAW PLC Writeup:
+Didn't get to solve it during the actual competition, but definitely recommend giving it a shot, very fun challenge.
+
+
 enjoy the flag `flag{1s_thi5_th3_n3w_stuxn3t_0r_jus7_4_w4r_g4m3}`
 
-The challenge was a twist on the well known stuxnet virus. It contained 6 sections that built on each other and was a generally fun and interesting challenge.
+The challenge was basically a twist on the well known stuxnet virus. It contained 6 sections that built on each other and was a generally fun and interesting challenge.
 
 ## Step 1
 ### Execute the default firmware
@@ -60,7 +62,7 @@ nuff said, specify a string with like 100 character length and we get the points
 
 ## Step 5
 ### JK lol get flag and cat shell
-This is the part where it all stopped. <br />
+Next step. <br />
 We had to put everything we had just learnt about this program, and try to somehow get shell.<br />
 
 I forgot to mention a few things..

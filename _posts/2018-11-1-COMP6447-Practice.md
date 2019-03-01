@@ -6,6 +6,8 @@ author: adamt
 
 woahhhh we have an exam on saturday i should probably study
 
+COMP6447 (System and Software Security) final exam is soon, here are some practice questions I've written for the course along with intended solutions
+
 Reversing
 --------------------------------
 
