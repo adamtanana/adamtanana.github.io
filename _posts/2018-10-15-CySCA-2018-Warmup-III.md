@@ -4,9 +4,6 @@ title: CySCA 2018 | Warmup III Writeup
 author: adamt
 ---
 
-Another interesting challenge from the CySCA 2018 team.
-
-
 This challenge included reverse engineering a unique command sequence, and then hijacking the logic of the program to leak memory addresses and eventually get shell.
 
 The commands
