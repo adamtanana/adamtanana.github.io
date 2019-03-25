@@ -31,7 +31,7 @@ You must return status code 0 if no rootkit is detected, and return 1 if a rootk
 
 We need a way of communicate to the kernel from userland, we do this via inline hooking of system calls.<br />
 We have a utility called `do_hook`, which takes in a function to overwrite and a function to overwrite it with.<br />
-```C
+```c
 void do_hook(void* overwrite, void* func) {
 	char* function_to_overwrite = (char*) overwrite;
 	char* function_to_call = (char*) func;
@@ -48,7 +48,7 @@ void do_hook(void* overwrite, void* func) {
 
 The first instruction of the original function becomes a x86 JMP32 command. This command has the opcode 0xe9 followed by a 4 byte relative address to where you want to jump to. <br />
 
-We can calculate the relative address by subtracting the function we want to jump to by the address we are patching. func_to_overwrite - func_to_jump_to.
+We can calculate the relative address by subtracting the function we want to jump to by the address we are patching. `func_to_overwrite - func_to_jump_to`.
 To summarise, we overwrite the function with 0xe9 followed by the calculated offset. This is all done by just referencing the function as a char array, and setting the first 5 bytes.
 
 #### Hidden Files
@@ -68,13 +68,13 @@ Specifically the hooks do the following:
 
 Now we needed a way to escalate to root privs from userland. <br />
 This is done by implementing a backdoor in our rootkit module. Specically, the following line of C will increase the privledges of the caller to uid=0.
-```C
+```c
 read(0xdeadbeef, NULL, 0xdeadb33f)
 ```
 
 This is done internally by editing the current processes `struct ucred`
 
-```C
+```c
 void escalate_privs(struct thread* td) {
     struct ucred* creds = td->td_ucred;
 
