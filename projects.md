@@ -4,7 +4,6 @@ title: projects
 permalink: /projects/
 ---
 
-Rootkit
+[Rootkit](projects/rootkit)
 ----------------
 
-[Rootkit](projects/rootkit)
