@@ -23,8 +23,9 @@ PIE:      No PIE (0x400000)
 RWX:      Has RWX segments
 ```
 
-The call to fgets() is problematic as fgets() stops reading at a NULL byte. All addresses in 64 bit pages have leading NULL bytes. This means we can not easily pass addresses into our buffer (or pass in multiple addresses as would be needed by a format string attack).
+I wanted a challenge! So I wanted to give myself a handicap.
 
+The handicap I gave myself was that I didn't want any NULL bytes in my payload. I solved this by leveraging the newline deletion to put NULL bytes in the write place in my buffer.
 
 # Thoughts
 
