@@ -4,9 +4,9 @@ title: projects
 permalink: /projects/
 ---
 
-[Rootkit](rootkit)
-
 [Waterpistol](waterpistol.pdf)
+
+[Rootkit](rootkit)
 
 ----------------
 

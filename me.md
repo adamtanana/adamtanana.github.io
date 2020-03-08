@@ -4,8 +4,9 @@ title: whoami
 permalink: /me/
 ---
 
-
-Studying Computer Science & Adv Mathematics @ UNSW
+Detection & Response @ Google
+Computer Science @ UNSW
 <br />
 enjoy hacking stuff for fun
+exploitation is fun. everything else is not
 
