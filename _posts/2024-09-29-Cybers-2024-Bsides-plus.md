@@ -1,6 +1,8 @@
-# Cybears 2024 (Bsides Canberra) Plus Writeup
-
-by adamt
+---
+layout: post
+title: Cybears CTF | Plus Writeup
+author: adamt
+---
 
 My writeup of the first Pwn challenge for Bsides 24 CTF.
 
